@@ -25,7 +25,7 @@
 </div>
 </div>
 <div class="container bg-secondary">
-
+ <div class="alert alert-danger" role="alert" th:></div>
 <form action="logUser" method="post">
 <div class="form-group">
 <label class="display-6 text-light" > email</label>

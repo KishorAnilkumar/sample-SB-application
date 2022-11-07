@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.example.demo.model.stdLog;
 import com.example.demo.model.student;
@@ -54,7 +56,8 @@ serviceDb sdb;
 	public String LoginUser(@RequestParam String stdEmail,@RequestParam String stdpassword,HttpSession session,Model m) {
 		List<stdLog> log=sdb.chkLogStd(stdEmail);
 		if(log.isEmpty()) {
-			return "index";
+	return "index";
+	
 		}
 		else {
 			stdLog logdtl=log.get(0);
